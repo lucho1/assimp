@@ -102,6 +102,7 @@ project 'Assimp'
 	includedirs
 	{
 		"include",
+		"code",
 		"contrib/irrXML",
 		"contrib/zlib",
 		"contrib/rapidjson/include",
