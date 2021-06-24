@@ -96,7 +96,10 @@ project 'Assimp'
 	{
 		"include/**",
 		"code/**",
-		"contrib/irrXML/*"
+		"contrib/irrXML/*",
+		"contrib/zip/src/**",
+		"contrib/zlib/**.c",
+		"contrib/zlib/**.h",
 	}
 
 	includedirs
@@ -105,6 +108,7 @@ project 'Assimp'
 		"code",
 		"contrib/irrXML",
 		"contrib/zlib",
+		"contrib/zip",
 		"contrib/rapidjson/include",
 	}
 
