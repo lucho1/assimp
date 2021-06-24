@@ -1,8 +1,3 @@
-project '*'
-	includedirs {
-		'assimp_build/include/assimp'
-	}
-
 project 'Assimp'
 	kind 'StaticLib'
 	warnings 'Off'
@@ -16,14 +11,14 @@ project 'Assimp'
 
 	includedirs
   {
-		'assimp_build',
+		'assimp_build/',
 		'assimp_build/include/',
 		'assimp_build/include/assimp',
 		'include/',
     'include/assimp/',
 		'contrib/irrXML/',
 		'contrib/unzip/',
-    'contrib/zlib',
+    'contrib/zlib/',
 		'contrib/rapidjson/include/',
 		'code/'
 	}
@@ -124,9 +119,15 @@ project 'Assimp'
 		'ASSIMP_BUILD_NO_ASSJSON_EXPORTER'
 	}
 
-
+  filter "system:linux"
+    pic "On"
+    systemversion "latest"
+    cppdialect "C++17"
+    staticruntime "On"
+  
   filter "system:windows"
       systemversion "latest"
+      staticruntime "On"
 
    filter  "configurations:Debug"
        runtime "Debug"
@@ -137,5 +138,5 @@ project 'Assimp'
        optimize "On"
        
     filter "configurations:Dist"
-    runtime "Release"
-    optimize "On"
+      runtime "Release"
+      optimize "On"
