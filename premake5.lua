@@ -95,8 +95,8 @@ project 'Assimp'
 	files
 	{
 		"include/**",
-		"code/**"
-		"contrib/irrXML/*",
+		"code/**",
+		"contrib/irrXML/*"
 	}
 
 	includedirs
