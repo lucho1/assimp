@@ -96,19 +96,20 @@ project 'Assimp'
 	{
 		"include/**",
 		"code/**",
+		"code/Common/**",
+		"code/PostProcessing/**",
+		"code/AssetLib/**",
 		"contrib/irrXML/*",
-		"contrib/zip/src/**",
-		"contrib/zlib/**.c",
-		"contrib/zlib/**.h",
 	}
 
 	includedirs
 	{
 		"include",
 		"code",
+		"code/Common",
+		"code/PostProcessing",
+		"code/AssetLib",
 		"contrib/irrXML",
-		"contrib/zlib",
-		"contrib/zip",
 		"contrib/rapidjson/include",
 	}
 
