@@ -95,42 +95,95 @@ project 'Assimp'
 	files
 	{
 		"include/**",
-		"code/**",
-		"code/Common/**",
-		"code/PostProcessing/**",
-		"code/AssetLib/**",
+		"code/Common/Assimp.cpp",
+		"code/Common/BaseImporter.cpp",
+		"code/Collada/ColladaLoader.cpp",
+		"code/Collada/ColladaParser.cpp",
+		"code/Common/CreateAnimMesh.cpp",
+		"code/Ply/PlyParser.cpp",
+		"code/Ply/PlyLoader.cpp",
+		"code/Common/BaseProcess.cpp",
+		"code/PostProcessing/EmbedTexturesProcess.cpp",
+		"code/PostProcessing/ConvertToLHProcess.cpp",
+		"code/Common/DefaultIOStream.cpp",
+		"code/Common/DefaultIOSystem.cpp",
+		"code/Common/DefaultLogger.cpp",
+		"code/PostProcessing/GenVertexNormalsProcess.cpp",
+		"code/Common/Importer.cpp",
+		"code/Common/ImporterRegistry.cpp",
+		"code/Material/MaterialSystem.cpp",
+		"code/Common/PostStepRegistry.cpp",
+		"code/PostProcessing/ProcessHelper.cpp",
+		"code/Common/scene.cpp",
+		"code/Common/ScenePreprocessor.cpp",
+		"code/PostProcessing/ScaleProcess.cpp",
+		"code/Common/SGSpatialSort.cpp",
+		"code/Common/SkeletonMeshBuilder.cpp",
+		"code/Common/SpatialSort.cpp",
+		"code/PostProcessing/TriangulateProcess.cpp",
+		"code/PostProcessing/ValidateDataStructure.cpp",
+		"code/Common/Version.cpp",
+		"code/Common/VertexTriangleAdjacency.cpp",
+		"code/Obj/ObjFileImporter.cpp",
+		"code/Obj/ObjFileMtlImporter.cpp",
+		"code/FBX/FBXAnimation.cpp",
+		"code/FBX/FBXBinaryTokenizer.cpp",
+		"code/FBX/FBXConverter.cpp",
+		"code/FBX/FBXDeformer.cpp",
+		"code/FBX/FBXDocument.cpp",
+		"code/FBX/FBXDocumentUtil.cpp",
+		"code/FBX/FBXImporter.cpp",
+		"code/FBX/FBXMaterial.cpp",
+		"code/FBX/FBXMeshGeometry.cpp",
+		"code/FBX/FBXModel.cpp",
+		"code/FBX/FBXNodeAttribute.cpp",
+		"code/FBX/FBXParser.cpp",
+		"code/FBX/FBXProperties.cpp",
+		"code/FBX/FBXTokenizer.cpp",
+		"code/FBX/FBXExporter.cpp",
+		"code/FBX/FBXExportNode.cpp",
+		"code/FBX/FBXExportProperty.cpp",
+		"code/FBX/FBXUtil.cpp",
+		"code/Obj/ObjFileParser.cpp",
+		"code/glTF/glTFImporter.cpp",
+		"code/glTF/glTF2Importer.cpp",
+		"code/PostProcessing/MakeVerboseFormat.cpp",
+		"code/PostProcessing/CalcTangentsProcess.cpp",
+		"code/PostProcessing/ScaleProcess.cpp",
+		"code/PostProcessing/EmbedTexturesProcess.cpp",
 		"contrib/irrXML/*",
 	}
 
 	includedirs
 	{
 		"include",
-		"code",
-		"code/Common",
-		"code/PostProcessing",
-		"code/AssetLib",
 		"contrib/irrXML",
 		"contrib/rapidjson/include",
+		
+		--"code",
+		--"code/Common",
+		--"code/PostProcessing",
+		--"code/AssetLib"
 	}
 
-  filter "system:linux"
-    pic "On"
-    systemversion "latest"
-    cppdialect "C++17"
-    staticruntime "On"
+	filter "system:linux"
+    	pic "On"
+    	systemversion "latest"
+    	cppdialect "C++17"
+    	staticruntime "On"
   
-  filter "system:windows"
-      systemversion "latest"
-      staticruntime "On"
+	filter "system:windows"
+    	systemversion "latest"
+    	staticruntime "On"
 
-   filter  "configurations:Debug"
-       runtime "Debug"
-       symbols "On"
+	filter  "configurations:Debug"
+    	runtime "Debug"
+    	symbols "On"
 
-   filter  "configurations:Release"
-       runtime "Release"
-       optimize "On"
+	filter  "configurations:Release"
+    	runtime "Release"
+    	optimize "On"
        
-    filter "configurations:Dist"
-      runtime "Release"
-      optimize "On"
+	filter "configurations:Dist"
+    	runtime "Release"
+    	optimize "On"
